@@ -7,7 +7,7 @@ import PizzaFormSuccess from "./components/PizzaFormSuccess";
 
 const App = () => {
   return (
-    <>
+    <div id='size-dropdown'>
       <nav>
         <img
           src='https://seeklogo.com/images/P/pizza-logo-D075E874ED-seeklogo.com.png'
@@ -29,7 +29,7 @@ const App = () => {
           <Home />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 };
 export default App;

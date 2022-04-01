@@ -134,19 +134,31 @@ export default function PizzaForm(props) {
             <i>required</i>
           </div>
           <label>
-            <input type='radio' name='sauce' value='originalRed' onChange={onChange} />
+            <input
+              type='radio'
+              name='sauce'
+              value='originalRed'
+              id='originalRed'
+              onChange={onChange}
+            />
             Original Red
           </label>
           <label>
-            <input type='radio' name='sauce' value='galricRanch' onChange={onChange} />
+            <input
+              type='radio'
+              name='sauce'
+              value='galricRanch'
+              id='galricRanch'
+              onChange={onChange}
+            />
             Garlic Ranch
           </label>
           <label>
-            <input type='radio' name='sauce' value='BBQSause' onChange={onChange} />
+            <input type='radio' name='sauce' value='BBQSause' id='BBQSause' onChange={onChange} />
             BBQ Sauce
           </label>
           <label>
-            <input type='radio' name='sauce' value='spinichAlfredo' onChange={onChange} />
+            <input type='radio' name='sauce' value='' id='spinichAlfredo' onChange={onChange} />
             Spinach Alfredo
           </label>
         </div>
@@ -156,15 +168,33 @@ export default function PizzaForm(props) {
             <i>Choose up to 10</i>
           </div>
           <label>
-            <input type='checkbox' name='toppings' value='pepperoni' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='pepperoni'
+              id='pepperoni'
+              onChange={onChange}
+            />
             Pepperoni
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='sausage' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='sausage'
+              id='sausage'
+              onChange={onChange}
+            />
             Sausage
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='canadianBacon' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='canadianBacon'
+              id='canadianBacon'
+              onChange={onChange}
+            />
             Canadian Bacon
           </label>
           <label>
@@ -172,48 +202,103 @@ export default function PizzaForm(props) {
               type='checkbox'
               name='toppings'
               value='spicyItalianSausage'
+              id='spicyItalianSausage'
               onChange={onChange}
             />
             Spicy Italian Sausage
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='grilledChicken' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='grilledChicken'
+              id='grilledChicken'
+              onChange={onChange}
+            />
             Grilled Chicken
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='onions' onChange={onChange} />
+            <input type='checkbox' name='toppings' value='onions' id='onions' onChange={onChange} />
             Onions
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='greenPepper' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='greenPepper'
+              id='greenPepper'
+              onChange={onChange}
+            />
             Green Pepper
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='dicedTomatoes' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='dicedTomatoes'
+              id='dicedTomatoes'
+              onChange={onChange}
+            />
             Diced Tomatoes
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='blackOlive' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='blackOlive'
+              id='blackOlive'
+              onChange={onChange}
+            />
             Black Olives
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='rostedGarlic' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='rostedGarlic'
+              id='rostedGarlic'
+              onChange={onChange}
+            />
             Rosted Garlic
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='artichokeHearts' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='artichokeHearts'
+              id='artichokeHearts'
+              onChange={onChange}
+            />
             Artichoke Hearts
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='threeCheese' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='threeCheese'
+              id='threeCheese'
+              onChange={onChange}
+            />
             Three Cheese
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='pineapple' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='pineapple'
+              id='pineapple'
+              onChange={onChange}
+            />
             Pineapple
           </label>
           <label>
-            <input type='checkbox' name='toppings' value='extraCheese' onChange={onChange} />
+            <input
+              type='checkbox'
+              name='toppings'
+              value='extraCheese'
+              id='extraCheese'
+              onChange={onChange}
+            />
             Extra Cheese
           </label>
         </div>
@@ -222,7 +307,13 @@ export default function PizzaForm(props) {
             <h2>Choice of substitute</h2>
           </div>
           <label>
-            <input type='checkbox' name='substitute' value='glutenFree' onChange={onChange} />
+            <input
+              id='substitute'
+              type='checkbox'
+              name='substitute'
+              value='glutenFree'
+              onChange={onChange}
+            />
             Gluten Free Crust (+ $1.00)
           </label>
         </div>
@@ -241,10 +332,10 @@ export default function PizzaForm(props) {
           </button>
         </Link>
         <div className='errors'>
-          <div>{formErrors.name}</div>
-          <div>{formErrors.size}</div>
-          <div>{formErrors.sauce}</div>
-          <div>{formErrors.toppings}</div>
+          <div id='nameError'>{formErrors.name}</div>
+          <div id='sizeError'>{formErrors.size}</div>
+          <div id='sauceError'>{formErrors.sauce}</div>
+          <div id='toppingsError'>{formErrors.toppings}</div>
         </div>
       </div>
     </form>

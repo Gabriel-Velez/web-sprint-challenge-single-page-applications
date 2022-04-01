@@ -1,4 +1,5 @@
 import * as yup from "yup";
+substitute: yup.object();
 
 const formSchema = yup.object().shape({
   name: yup.string().required("Please enter a name").min(2, "Name must be more than 2 charachters"),
