@@ -19,6 +19,9 @@ const App = () => {
         <Route path={`/pizza/success`}>
           <PizzaFormSuccess />
         </Route>
+        <Route path='/pizza/:sizeID'>
+          <PizzaForm />
+        </Route>
         <Route path='/pizza'>
           <PizzaForm />
         </Route>

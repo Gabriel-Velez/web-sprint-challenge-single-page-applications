@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import schema from "../validation/formSchema";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const initialFormValues = {
+  name: "",
   size: "",
   sauce: "",
   toppings: 0,
@@ -11,6 +12,7 @@ const initialFormValues = {
   specialInstructions: "",
 };
 const initialFormErrors = {
+  name: "",
   size: "",
   sauce: "",
   toppings: "",
@@ -21,10 +23,25 @@ export default function PizzaForm(props) {
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [toppings, setToppings] = useState([]);
   const [disabled, setDisabled] = useState(true);
+  const { sizeID } = useParams();
 
   useEffect(() => {
     schema.isValid(formValues).then((valid) => setDisabled(!valid));
   }, [formValues]);
+
+  useEffect(() => {
+    switch (sizeID) {
+      case "small":
+        document.querySelector("#small").click();
+        break;
+      case "medium":
+        document.querySelector("#medium").click();
+        break;
+      case "large":
+        document.querySelector("#large").click();
+        break;
+    }
+  }, []);
 
   const validate = (name, value) => {
     yup
@@ -69,6 +86,7 @@ export default function PizzaForm(props) {
 
   const onSubmit = () => {
     const order = {
+      name: formValues.name,
       size: formValues.size,
       sause: formValues.sauce,
       toppings: toppings,
@@ -84,22 +102,31 @@ export default function PizzaForm(props) {
         <h1>Build Your Own Pizza</h1>
         <div className='form'>
           <div className='Title'>
+            <h2>Information</h2>
+            <i>required</i>
+          </div>
+          <label>
+            Name:
+            <input id='name-input' type='text' name='name' onChange={onChange} />
+          </label>
+        </div>
+        <div className='form' id='size-dropdown'>
+          <div className='Title'>
             <h2>Choice of size</h2>
             <i>required</i>
           </div>
           <label>
-            <input type='radio' name='size' value='small' onChange={onChange} />
+            <input id='small' type='radio' name='size' value='small' onChange={onChange} />
             Small
           </label>
           <label>
-            <input type='radio' name='size' value='medium' onChange={onChange} />
+            <input id='medium' type='radio' name='size' value='medium' onChange={onChange} />
             Medium
           </label>
           <label>
-            <input type='radio' name='size' value='large' onChange={onChange} />
+            <input id='large' type='radio' name='size' value='large' onChange={onChange} />
             Large
           </label>
-          <label></label>
         </div>
         <div className='form'>
           <div className='Title'>
@@ -205,15 +232,16 @@ export default function PizzaForm(props) {
           </div>
           <label>
             Anything else youd like to add:
-            <input type='text' name='specialInstructions' onChange={onChange} />
+            <input id='special-text' type='text' name='specialInstructions' onChange={onChange} />
           </label>
         </div>
         <Link to='/pizza/success'>
-          <button id='submitBtn' disabled={disabled}>
+          <button id='order-button' disabled={disabled}>
             submit
           </button>
         </Link>
         <div className='errors'>
+          <div>{formErrors.name}</div>
           <div>{formErrors.size}</div>
           <div>{formErrors.sauce}</div>
           <div>{formErrors.toppings}</div>

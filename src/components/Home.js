@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [size, setSize] = useState("");
+
+  const onChange = (evt) => {
+    const { value } = evt.target;
+    setSize(value);
+  };
+
   return (
     <div>
       <div>
@@ -14,19 +21,19 @@ export default function Home() {
         <img src='https://www.eeatit.com/wp-content/uploads/2020/12/cheese-pizza.png' alt='' />
         <form>
           <label>
+            <input type='radio' name='sizeSelect' value='small' onChange={onChange} />
             small
-            <input type='radio' name='sizeSelect' value='small' />
           </label>
           <label>
+            <input type='radio' name='sizeSelect' value='medium' onChange={onChange} />
             medium
-            <input type='radio' name='sizeSelect' value='medium' />
           </label>
           <label>
+            <input type='radio' name='sizeSelect' value='large' onChange={onChange} />
             large
-            <input type='radio' name='sizeSelect' value='large' />
           </label>
         </form>
-        <Link to='/pizza'>Order Now</Link>
+        <Link to={`/pizza/${size}`}>Order Now</Link>
       </div>
     </div>
   );
