@@ -10,27 +10,32 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <div>
+    <div className='home'>
+      <div className='home-left'>
         <h1>Your favorite food</h1>
         <h1>Deliverd while coding</h1>
-        <p>Whos hungry?</p>
+        <p>
+          Create your own pizza with your choice of size, sauces, and premium quality ingredients.
+          You can even make it gluten free!
+        </p>
         <Link to='/pizza'>Pizza?</Link>
       </div>
-      <div>
+      <div className='home-right'>
         <img src='https://www.eeatit.com/wp-content/uploads/2020/12/cheese-pizza.png' alt='' />
+        <h1>Original</h1>
+        <p>Made with the best ingredients</p>
         <form>
           <label>
             <input type='radio' name='sizeSelect' value='small' onChange={onChange} />
-            small
+            Small
           </label>
           <label>
             <input type='radio' name='sizeSelect' value='medium' onChange={onChange} />
-            medium
+            Medium
           </label>
           <label>
             <input type='radio' name='sizeSelect' value='large' onChange={onChange} />
-            large
+            Large
           </label>
         </form>
         <Link to={`/pizza/${size}`}>Order Now</Link>

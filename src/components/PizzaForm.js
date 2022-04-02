@@ -100,7 +100,7 @@ export default function PizzaForm(props) {
     <form onSubmit={onSubmit}>
       <div className='form-wrapper'>
         <h1>Build Your Own Pizza</h1>
-        <div className='form'>
+        <div className='form' id='size-dropdown'>
           <div className='Title'>
             <h2>Information</h2>
             <i>required</i>
@@ -109,6 +109,9 @@ export default function PizzaForm(props) {
             Name:
             <input id='name-input' type='text' name='name' onChange={onChange} />
           </label>
+          <div className='errors' id='nameError'>
+            {formErrors.name}
+          </div>
         </div>
         <div className='form' id='size-dropdown'>
           <div className='Title'>
@@ -301,6 +304,9 @@ export default function PizzaForm(props) {
             />
             Extra Cheese
           </label>
+          <div className='errors' id='toppingsError'>
+            {formErrors.toppings}
+          </div>
         </div>
         <div className='form'>
           <div className='Title'>
@@ -331,12 +337,6 @@ export default function PizzaForm(props) {
             submit
           </button>
         </Link>
-        <div className='errors'>
-          <div id='nameError'>{formErrors.name}</div>
-          <div id='sizeError'>{formErrors.size}</div>
-          <div id='sauceError'>{formErrors.sauce}</div>
-          <div id='toppingsError'>{formErrors.toppings}</div>
-        </div>
       </div>
     </form>
   );

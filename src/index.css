@@ -1,13 +1,114 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+nav {
+  height: 125px;
+  padding: 30px 50px;
+  width: calc(100vw - 100px);
+  position: fixed;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.431372549);
+}
+nav .nav-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 110px;
+  margin: 0;
+}
+nav .nav-container .nav-logo {
+  height: 80%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+nav .nav-link {
+  width: 162px;
+  margin-left: auto;
+}
+nav .nav-link a {
+  color: black;
+  font-size: 1.5rem;
+}
+nav .nav-link a:hover {
+  color: #ff656b;
+}
+
+.wrapper {
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.home {
+  display: flex;
+  border-radius: 20%;
+  width: 100%;
+}
+.home-left, .home-right {
+  padding: 50px;
+}
+.home-left {
+  background-color: #ffe590;
+  width: 40%;
+  color: #ff656b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-left a {
+  color: #ffe590;
+  background-color: #ff656b;
+  text-decoration: none;
+  padding: 10px 60px;
+  width: 44px;
+  border-radius: 15px;
+  transition: 0.25s background-color;
+}
+.home-left a:hover {
+  background-color: #e25a5f;
+}
+.home-left p {
+  margin: 50px 0;
+  font-size: 1.12rem;
+  font-weight: 500;
+}
+.home-right {
+  width: 60%;
+  color: #ffe590;
+  background-color: #ff656b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-right img {
+  width: 70%;
+  padding: 50px 0;
+  max-width: 600px;
+}
+.home-right p {
+  margin: 15px 0;
+}
+.home-right a {
+  color: #ffe590;
+}/*# sourceMappingURL=index.css.map */

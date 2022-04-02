@@ -7,29 +7,37 @@ import PizzaFormSuccess from "./components/PizzaFormSuccess";
 
 const App = () => {
   return (
-    <div id='size-dropdown'>
+    <>
       <nav>
-        <img
-          src='https://seeklogo.com/images/P/pizza-logo-D075E874ED-seeklogo.com.png'
-          alt='logo'
-        />
-        <Link to='/'>Home</Link>
+        <div className='nav-container'>
+          <img
+            src='https://seeklogo.com/images/P/pizza-logo-D075E874ED-seeklogo.com.png'
+            alt='logo'
+            className='nav-logo'
+          />
+          Lambda Eats
+        </div>
+        <div className='nav-link'>
+          <Link to='/'>Home</Link>
+        </div>
       </nav>
-      <Switch>
-        <Route path={`/pizza/success`}>
-          <PizzaFormSuccess />
-        </Route>
-        <Route path='/pizza/:sizeID'>
-          <PizzaForm />
-        </Route>
-        <Route path='/pizza'>
-          <PizzaForm />
-        </Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </div>
+      <div className='wrapper'>
+        <Switch>
+          <Route path={`/pizza/success`}>
+            <PizzaFormSuccess />
+          </Route>
+          <Route path='/pizza/:sizeID'>
+            <PizzaForm />
+          </Route>
+          <Route path='/pizza'>
+            <PizzaForm />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </>
   );
 };
 export default App;
