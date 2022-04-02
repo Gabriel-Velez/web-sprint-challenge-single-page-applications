@@ -19,8 +19,8 @@ p {
 }
 
 nav {
-  height: 125px;
-  padding: 30px 50px;
+  height: 100px;
+  padding: 25px 50px;
   width: calc(100vw - 100px);
   position: fixed;
   flex-direction: row;
@@ -34,6 +34,7 @@ nav {
     text-transform: uppercase;
     font-weight: 600;
     width: 110px;
+    align-items: center;
     margin: 0;
     .nav-logo {
       height: 80%;
@@ -41,11 +42,12 @@ nav {
     }
   }
   .nav-link {
-    width: 162px;
+    width: 250px;
     margin-left: auto;
     a {
       color: black;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      margin-right: 20px;
       &:hover {
         color: $primary-color-red;
       }
@@ -54,7 +56,7 @@ nav {
 }
 
 .wrapper {
-  padding: 5%;
+  padding: 5vh 5vw;
   display: flex;
   align-items: center;
   min-height: 90vh;
@@ -76,6 +78,9 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    h1 {
+      font-size: 2.75rem;
+    }
     a {
       color: $primary-color-yellow;
       background-color: $primary-color-red;
@@ -89,7 +94,8 @@ nav {
       }
     }
     p {
-      margin: 50px 0;
+      margin-top: 25px;
+      margin-bottom: 50px;
       font-size: 1.12rem;
       font-weight: 500;
     }
@@ -112,6 +118,37 @@ nav {
     }
     a {
       color: $primary-color-yellow;
+    }
+  }
+}
+
+.form-wrapper {
+  h1 {
+    margin-bottom: 50px;
+  }
+  .form {
+    margin-bottom: 50px;
+    input {
+      margin-left: 10px;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    .Title {
+      margin-bottom: 15px;
+    }
+    .allToppings {
+      display: flex;
+      .toppingGroup {
+        display: flex;
+        flex-direction: column;
+        margin-right: 25px;
+      }
     }
   }
 }

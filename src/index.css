@@ -16,8 +16,8 @@ p {
 }
 
 nav {
-  height: 125px;
-  padding: 30px 50px;
+  height: 100px;
+  padding: 25px 50px;
   width: calc(100vw - 100px);
   position: fixed;
   flex-direction: row;
@@ -32,6 +32,7 @@ nav .nav-container {
   text-transform: uppercase;
   font-weight: 600;
   width: 110px;
+  align-items: center;
   margin: 0;
 }
 nav .nav-container .nav-logo {
@@ -41,19 +42,20 @@ nav .nav-container .nav-logo {
   width: fit-content;
 }
 nav .nav-link {
-  width: 162px;
+  width: 250px;
   margin-left: auto;
 }
 nav .nav-link a {
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin-right: 20px;
 }
 nav .nav-link a:hover {
   color: #ff656b;
 }
 
 .wrapper {
-  padding: 5%;
+  padding: 5vh 5vw;
   display: flex;
   align-items: center;
   min-height: 90vh;
@@ -75,6 +77,9 @@ nav .nav-link a:hover {
   flex-direction: column;
   justify-content: center;
 }
+.home-left h1 {
+  font-size: 2.75rem;
+}
 .home-left a {
   color: #ffe590;
   background-color: #ff656b;
@@ -88,7 +93,8 @@ nav .nav-link a:hover {
   background-color: #e25a5f;
 }
 .home-left p {
-  margin: 50px 0;
+  margin-top: 25px;
+  margin-bottom: 50px;
   font-size: 1.12rem;
   font-weight: 500;
 }
@@ -111,4 +117,33 @@ nav .nav-link a:hover {
 }
 .home-right a {
   color: #ffe590;
+}
+
+.form-wrapper h1 {
+  margin-bottom: 50px;
+}
+.form-wrapper .form {
+  margin-bottom: 50px;
+}
+.form-wrapper .form input {
+  margin-left: 10px;
+}
+.form-wrapper .form input[type=checkbox],
+.form-wrapper .form input[type=radio] {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.form-wrapper .form label {
+  margin-right: 10px;
+}
+.form-wrapper .form .Title {
+  margin-bottom: 15px;
+}
+.form-wrapper .form .allToppings {
+  display: flex;
+}
+.form-wrapper .form .allToppings .toppingGroup {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
 }/*# sourceMappingURL=index.css.map */

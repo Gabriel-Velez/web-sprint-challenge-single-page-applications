@@ -170,140 +170,158 @@ export default function PizzaForm(props) {
             <h2>Add Toppins</h2>
             <i>Choose up to 10</i>
           </div>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='pepperoni'
-              id='pepperoni'
-              onChange={onChange}
-            />
-            Pepperoni
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='sausage'
-              id='sausage'
-              onChange={onChange}
-            />
-            Sausage
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='canadianBacon'
-              id='canadianBacon'
-              onChange={onChange}
-            />
-            Canadian Bacon
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='spicyItalianSausage'
-              id='spicyItalianSausage'
-              onChange={onChange}
-            />
-            Spicy Italian Sausage
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='grilledChicken'
-              id='grilledChicken'
-              onChange={onChange}
-            />
-            Grilled Chicken
-          </label>
-          <label>
-            <input type='checkbox' name='toppings' value='onions' id='onions' onChange={onChange} />
-            Onions
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='greenPepper'
-              id='greenPepper'
-              onChange={onChange}
-            />
-            Green Pepper
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='dicedTomatoes'
-              id='dicedTomatoes'
-              onChange={onChange}
-            />
-            Diced Tomatoes
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='blackOlive'
-              id='blackOlive'
-              onChange={onChange}
-            />
-            Black Olives
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='rostedGarlic'
-              id='rostedGarlic'
-              onChange={onChange}
-            />
-            Rosted Garlic
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='artichokeHearts'
-              id='artichokeHearts'
-              onChange={onChange}
-            />
-            Artichoke Hearts
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='threeCheese'
-              id='threeCheese'
-              onChange={onChange}
-            />
-            Three Cheese
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='pineapple'
-              id='pineapple'
-              onChange={onChange}
-            />
-            Pineapple
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              name='toppings'
-              value='extraCheese'
-              id='extraCheese'
-              onChange={onChange}
-            />
-            Extra Cheese
-          </label>
+          <div className='allToppings'>
+            <div className='toppingGroup'>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='pepperoni'
+                  id='pepperoni'
+                  onChange={onChange}
+                />
+                Pepperoni
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='sausage'
+                  id='sausage'
+                  onChange={onChange}
+                />
+                Sausage
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='canadianBacon'
+                  id='canadianBacon'
+                  onChange={onChange}
+                />
+                Canadian Bacon
+              </label>
+            </div>
+            <div className='toppingGroup'>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='spicyItalianSausage'
+                  id='spicyItalianSausage'
+                  onChange={onChange}
+                />
+                Spicy Italian Sausage
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='grilledChicken'
+                  id='grilledChicken'
+                  onChange={onChange}
+                />
+                Grilled Chicken
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='onions'
+                  id='onions'
+                  onChange={onChange}
+                />
+                Onions
+              </label>
+            </div>
+            <div className='toppingGroup'>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='greenPepper'
+                  id='greenPepper'
+                  onChange={onChange}
+                />
+                Green Pepper
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='dicedTomatoes'
+                  id='dicedTomatoes'
+                  onChange={onChange}
+                />
+                Diced Tomatoes
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='blackOlive'
+                  id='blackOlive'
+                  onChange={onChange}
+                />
+                Black Olives
+              </label>
+            </div>
+            <div className='toppingGroup'>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='rostedGarlic'
+                  id='rostedGarlic'
+                  onChange={onChange}
+                />
+                Rosted Garlic
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='artichokeHearts'
+                  id='artichokeHearts'
+                  onChange={onChange}
+                />
+                Artichoke Hearts
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='threeCheese'
+                  id='threeCheese'
+                  onChange={onChange}
+                />
+                Three Cheese
+              </label>
+            </div>
+            <div className='toppingGroup'>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='pineapple'
+                  id='pineapple'
+                  onChange={onChange}
+                />
+                Pineapple
+              </label>
+              <label>
+                <input
+                  type='checkbox'
+                  name='toppings'
+                  value='extraCheese'
+                  id='extraCheese'
+                  onChange={onChange}
+                />
+                Extra Cheese
+              </label>
+            </div>
+          </div>
           <div className='errors' id='toppingsError'>
             {formErrors.toppings}
           </div>

@@ -19,6 +19,7 @@ const App = () => {
         </div>
         <div className='nav-link'>
           <Link to='/'>Home</Link>
+          <Link to='/pizza'>Pizza Maker</Link>
         </div>
       </nav>
       <div className='wrapper'>
