@@ -125,6 +125,11 @@ nav .nav-link a:hover {
 .form-wrapper .form {
   margin-bottom: 50px;
 }
+.form-wrapper .form .errors {
+  color: #e25a5f;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
 .form-wrapper .form input {
   margin-left: 10px;
 }

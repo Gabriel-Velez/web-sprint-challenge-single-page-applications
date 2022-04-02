@@ -128,6 +128,11 @@ nav {
   }
   .form {
     margin-bottom: 50px;
+    .errors {
+      color: #e25a5f;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
     input {
       margin-left: 10px;
     }
