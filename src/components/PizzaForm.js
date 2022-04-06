@@ -75,12 +75,14 @@ export default function PizzaForm(props) {
       .post("https://reqres.in/api/orders/", order)
       .then((res) => {
         console.log(res);
+        console.log("posted");
       })
       .catch((err) => console.error(err))
       .finally(() => setFormValues(initialFormValues));
   };
 
-  const onSubmit = () => {
+  const onSubmit = (evt) => {
+    evt.preventDefault();
     const order = {
       name: formValues.name,
       size: formValues.size,
@@ -114,14 +116,12 @@ export default function PizzaForm(props) {
             <h2>Choice of size</h2>
             <i>required</i>
           </div>
-          <label>
-            Size
-            <select name='size' id='size-dropdown' onChange={onChange}>
-              <option value='small'>Small</option>
-              <option value='medium'>Medium</option>
-              <option value='large'>Large</option>
-            </select>
-          </label>
+          <label>Size</label>
+          <select name='size' id='size-dropdown' onChange={onChange}>
+            <option value='small'>Small</option>
+            <option value='medium'>Medium</option>
+            <option value='large'>Large</option>
+          </select>
         </div>
         <div className='form'>
           <div className='Title'>
@@ -342,11 +342,11 @@ export default function PizzaForm(props) {
             <input id='special-text' type='text' name='specialInstructions' onChange={onChange} />
           </label>
         </div>
-        <Link to='/pizza/success'>
-          <button id='order-button' disabled={disabled}>
-            submit
-          </button>
-        </Link>
+        {/* <Link to='/pizza/success'> */}
+        <button id='order-button' disabled={disabled}>
+          submit
+        </button>
+        {/* </Link> */}
       </div>
     </form>
   );
