@@ -89,7 +89,7 @@ export default function PizzaForm(props) {
       substitute: formValues.substitute,
       specialInstructions: formValues.specialInstructions,
     };
-    return order;
+    postNewOrder(order);
   };
 
   return (
