@@ -6,7 +6,7 @@ import axios from "axios";
 
 const initialFormValues = {
   name: "",
-  size: "",
+  size: "small",
   sauce: "",
   toppings: 0,
   substitute: false,
@@ -70,16 +70,6 @@ export default function PizzaForm(props) {
     }
   };
 
-  const postNewOrder = (order) => {
-    axios
-      .post("https://reqres.in/api/orders/", order)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setFormValues(initialFormValues));
-  };
-
   const onSubmit = (evt) => {
     evt.preventDefault();
     const order = {
@@ -91,6 +81,16 @@ export default function PizzaForm(props) {
       specialInstructions: formValues.specialInstructions,
     };
     postNewOrder(order);
+  };
+
+  const postNewOrder = (order) => {
+    axios
+      .post("https://reqres.in/api/orders/", order)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setFormValues(initialFormValues));
   };
 
   return (
