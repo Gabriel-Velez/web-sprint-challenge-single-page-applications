@@ -75,7 +75,6 @@ export default function PizzaForm(props) {
       .post("https://reqres.in/api/orders/", order)
       .then((res) => {
         console.log(res);
-        console.log("posted");
       })
       .catch((err) => console.error(err))
       .finally(() => setFormValues(initialFormValues));
@@ -342,11 +341,11 @@ export default function PizzaForm(props) {
             <input id='special-text' type='text' name='specialInstructions' onChange={onChange} />
           </label>
         </div>
-        {/* <Link to='/pizza/success'> */}
-        <button id='order-button' disabled={disabled}>
-          submit
-        </button>
-        {/* </Link> */}
+        <Link to='/pizza/success'>
+          <button id='order-button' disabled={disabled}>
+            submit
+          </button>
+        </Link>
       </div>
     </form>
   );
