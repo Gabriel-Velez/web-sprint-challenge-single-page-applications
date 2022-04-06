@@ -19,16 +19,15 @@ const App = () => {
         </div>
         <div className='nav-link'>
           <Link to='/'>Home</Link>
-          <Link to='/pizza'>Pizza Maker</Link>
+          <Link to='/pizza' id='order-pizza'>
+            Pizza Maker
+          </Link>
         </div>
       </nav>
       <div className='wrapper'>
         <Switch>
           <Route path={`/pizza/success`}>
             <PizzaFormSuccess />
-          </Route>
-          <Route path='/pizza/:sizeID'>
-            <PizzaForm />
           </Route>
           <Route path='/pizza'>
             <PizzaForm />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import schema from "../validation/formSchema";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const initialFormValues = {
   name: "",
@@ -23,25 +24,10 @@ export default function PizzaForm(props) {
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [toppings, setToppings] = useState([]);
   const [disabled, setDisabled] = useState(true);
-  const { sizeID } = useParams();
 
   useEffect(() => {
     schema.isValid(formValues).then((valid) => setDisabled(!valid));
   }, [formValues]);
-
-  useEffect(() => {
-    switch (sizeID) {
-      case "small":
-        document.querySelector("#small").click();
-        break;
-      case "medium":
-        document.querySelector("#medium").click();
-        break;
-      case "large":
-        document.querySelector("#large").click();
-        break;
-    }
-  }, []);
 
   const validate = (name, value) => {
     yup
@@ -84,6 +70,16 @@ export default function PizzaForm(props) {
     }
   };
 
+  const postNewOrder = (order) => {
+    axios
+      .post("https://reqres.in/api/orders/", order)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setFormValues(initialFormValues));
+  };
+
   const onSubmit = () => {
     const order = {
       name: formValues.name,
@@ -97,7 +93,7 @@ export default function PizzaForm(props) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} id='pizza-form'>
       <div className='form-wrapper'>
         <h1>Build Your Own Pizza</h1>
         <div className='form' id='size-dropdown'>
@@ -119,16 +115,12 @@ export default function PizzaForm(props) {
             <i>required</i>
           </div>
           <label>
-            <input id='small' type='radio' name='size' value='small' onChange={onChange} />
-            Small
-          </label>
-          <label>
-            <input id='medium' type='radio' name='size' value='medium' onChange={onChange} />
-            Medium
-          </label>
-          <label>
-            <input id='large' type='radio' name='size' value='large' onChange={onChange} />
-            Large
+            Size
+            <select name='size' id='size-dropdown' onChange={onChange}>
+              <option value='small'>Small</option>
+              <option value='medium'>Medium</option>
+              <option value='large'>Large</option>
+            </select>
           </label>
         </div>
         <div className='form'>
