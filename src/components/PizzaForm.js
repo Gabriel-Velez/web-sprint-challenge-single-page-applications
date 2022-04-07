@@ -4,6 +4,8 @@ import schema from "../validation/formSchema";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
+const toppingsChecklist = document.querySelectorAll('[type="checkbox"]');
+
 const initialFormValues = {
   name: "",
   size: "small",
@@ -97,7 +99,7 @@ export default function PizzaForm(props) {
     <form onSubmit={onSubmit} id='pizza-form'>
       <div className='form-wrapper'>
         <h1>Build Your Own Pizza</h1>
-        <div className='form' id='size-dropdown'>
+        <div className='form'>
           <div className='Title'>
             <h2>Information</h2>
             <i>required</i>
@@ -110,7 +112,7 @@ export default function PizzaForm(props) {
             {formErrors.name}
           </div>
         </div>
-        <div className='form' id='size-dropdown'>
+        <div className='form'>
           <div className='Title'>
             <h2>Choice of size</h2>
             <i>required</i>
